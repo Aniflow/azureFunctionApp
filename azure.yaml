@@ -1,0 +1,15 @@
+name: Aniflow functionApp
+
+infra:
+  path: ./infra/bicep
+
+services:
+  example-function:
+    project: ./example-function
+    language: python
+    host: function
+    resourceName: serverless-fa-t
+    deploy:
+      package:
+        type: zip
+        path: ./example-function/function.zip
